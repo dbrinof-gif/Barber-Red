@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>حجز الحلاقة</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #f2f2f2;
+    }
+    .box {
+      background: white;
+      padding: 20px;
+      margin: 50px auto;
+      width: 300px;
+      border-radius: 10px;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    button {
+      background: green;
+      color: white;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>💈 احجز حلاقتك</h2>
+
+  <input type="text" id="name" placeholder="اسمك">
+
+  <select id="service">
+    <option>قص عادي</option>
+    <option>قص + لحية</option>
+    <option>لحية فقط</option>
+    <option>قص أطفال</option>
+  </select>
+
+  <button onclick="book()">احجز</button>
+
+  <p id="result"></p>
+</div>
+
+<script>
+function book() {
+  let name = document.getElementById("name").value;
+  let service = document.getElementById("service").value;
+
+  if(name === "") {
+    alert("اكتب اسمك");
+    return;
+  }
+
+  document.getElementById("result").innerHTML =
+    "تم الحجز باسم " + name + " (" + service + ")";
+}
+</script>
+
+</body>
+</html>
